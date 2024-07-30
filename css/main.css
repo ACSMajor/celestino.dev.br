@@ -10,6 +10,9 @@ section.menu {
 		list-style-type: none;
 		margin: 0;
 		padding: .25em;
+		display: inline-flex;
+		flex-wrap: wrap;
+		justify-content: center;
 		li {
 			padding: .25em;
 		}
@@ -19,10 +22,9 @@ section.menu.lang {
 	text-align: center;
 	ul {
 		li {
-			display: inline-flex;
 			a {
 				text-decoration: none;
-				display: inline-flex;
+				display: flex;
 				align-items: center;
 				width: max-content;
 				img {
@@ -70,6 +72,10 @@ section.menu.main {
 		text-decoration: underline;
         border: inset;
         border-width: .1em;
+        background-color: #FFECAA; 
+        color: #29261B;
+        border-color: #DECD94;
+        pointer-events: none;
 	}
 }
 section#welcome {
@@ -116,11 +122,6 @@ p {
 @media (max-width: 425.9px) {
 	section.menu.main {
 		text-align: center;
-		ul {
-			li {
-				display: contents;
-			}
-		}
 	}
 }
 @media (min-width: 426px) and (max-width: 768.9px) {
@@ -130,38 +131,71 @@ p {
         height: -webkit-fill-available;
         display: flex;
         align-items: center;
-        rotate: 90deg;
+        rotate: -90deg;
         translate: -42.5%;
         ul {
-			li {
-				display: contents;
-				input[type="button"] {
-					transform: rotate(-180deg);
-				}
+        	flex-direction: row-reverse;
+        	width: 72.7vh;
+        	height: 0;
+        	position: fixed;
+        	translate: -50%;
+		}
+	}
+	:lang(pt-BR) {
+		@media (max-height: 332.9px) {
+			section#welcome {
+				left: 5.5em;
+			}
+		}
+		@media (min-height: 333px) and (max-height: 607.9px) {
+			section#welcome {
+				left: 3.5em;
+			}
+		}
+		@media (min-height: 608px) {
+			section#welcome {
+				left: 1.5em;
 			}
 		}
 	}
-	section#welcome {
-		left: 1.9em;
+	:lang(en-US) {
+		@media (max-height: 325.9px) {
+			section#welcome {
+				left: 5.5em;
+			}
+		}
+		@media (min-height: 326px) and (max-height: 538.9px) {
+			section#welcome {
+				left: 3.5em;
+			}
+		}
+		@media (min-height: 539px) {
+			section#welcome {
+				left: 1.5em;
+			}
+		}
 	}
 }
 @media (min-width: 769px) {
 	section.menu.main {
-        width: fit-content;
+        width: 0;
         position: fixed;
         height: -webkit-fill-available;
         display: flex;
         align-items: center;
-		ul {
-			li {
-				width: 6.8em;
-				input[type="button"] {
-					width: -webkit-fill-available;
-				}
-			}
-		}
+        ul {
+        	li {
+        		width: -webkit-fill-available;
+        		input[type="button"] {
+        			width: -webkit-fill-available;
+        		}
+        	}
+        }
 	}
-	section#welcome {
-        left: 7.3em;
+	section#welcome:lang(pt-BR) {
+        left: 7.1em;
+	}
+	section#welcome:lang(en-US) {
+        left: 5.5em;
 	}
 }
