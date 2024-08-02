@@ -4,6 +4,7 @@ body {
     font-size: 7.5mm;
     font-family: cursive;
     margin: 0;
+    min-width: fit-content;
 }
 section.menu {
 	ul {
@@ -79,10 +80,8 @@ section.menu.main {
 	}
 }
 section#welcome {
-	height: -webkit-fill-available;
-	overflow-y: overlay;
+	overflow-y: auto;
 	padding: 0 .5em .5em .5em;
-	position: fixed;
 }
 h1,
 h2,
@@ -123,79 +122,52 @@ p {
 	section.menu.main {
 		text-align: center;
 	}
+	section#welcome {
+		position: fixed;
+		height: -webkit-fill-available;
+	}
 }
 @media (min-width: 426px) and (max-width: 768.9px) {
-	section.menu.main {
-        width: fit-content;
-        position: fixed;
-        height: -webkit-fill-available;
-        display: flex;
-        align-items: center;
-        rotate: -90deg;
-        translate: -42.5%;
-        ul {
-        	flex-direction: row-reverse;
-        	width: 72.7vh;
-        	height: 0;
-        	position: fixed;
-        	translate: -50%;
-		}
-	}
-	:lang(pt-BR) {
-		@media (max-height: 332.9px) {
-			section#welcome {
-				left: 5.5em;
+	div {
+		position: fixed;
+		height: -webkit-fill-available;
+		display: flex;
+		section.menu.main {
+	        display: flex;
+	        align-items: center;
+	        ul {
+                writing-mode: vertical-rl;
+                rotate: 180deg;
+                flex-direction: row-reverse;
 			}
 		}
-		@media (min-height: 333px) and (max-height: 607.9px) {
-			section#welcome {
-				left: 3.5em;
-			}
-		}
-		@media (min-height: 608px) {
-			section#welcome {
-				left: 1.5em;
-			}
-		}
-	}
-	:lang(en-US) {
-		@media (max-height: 325.9px) {
-			section#welcome {
-				left: 5.5em;
-			}
-		}
-		@media (min-height: 326px) and (max-height: 538.9px) {
-			section#welcome {
-				left: 3.5em;
-			}
-		}
-		@media (min-height: 539px) {
-			section#welcome {
-				left: 1.5em;
-			}
+		section#welcome {
+			padding-left: 0;
+			overflow-y: auto;
 		}
 	}
 }
 @media (min-width: 769px) {
-	section.menu.main {
-        width: 0;
-        position: fixed;
-        height: -webkit-fill-available;
-        display: flex;
-        align-items: center;
-        ul {
-        	li {
-        		width: -webkit-fill-available;
-        		input[type="button"] {
-        			width: -webkit-fill-available;
-        		}
-        	}
-        }
-	}
-	section#welcome:lang(pt-BR) {
-        left: 7.1em;
-	}
-	section#welcome:lang(en-US) {
-        left: 5.5em;
+	div {
+		position: fixed;
+		height: -webkit-fill-available;
+		display: flex;
+		section.menu.main {
+	        width: min-content;
+	        display: flex;
+	        align-items: center;
+	        ul {
+	        	li {
+	        		width: -webkit-fill-available;
+	        		input[type="button"] {
+	        			width: -webkit-fill-available;
+	        		}
+	        	}
+	        }
+		}
+		section#welcome {
+			padding-left: 0;
+			overflow-y: auto;
+		}
 	}
 }
