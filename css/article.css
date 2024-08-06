@@ -1,0 +1,14 @@
+@media (max-width: 425.9px) {
+	body {
+		article {
+			padding: 0 .5em .5em .5em;
+		}
+	}
+}
+@media (min-width: 426px) {
+	body {
+		article {
+			padding: 0 .5em .5em 0;
+		}
+	}
+}

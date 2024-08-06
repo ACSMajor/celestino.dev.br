@@ -1,0 +1,45 @@
+body {
+	section.menu.lang {
+		input[type="radio"][name="lang"] {
+			display: none;
+			+label {
+				display: flex;
+				align-items: center;
+				img {
+					height: 1.5em;
+					padding-right: .25em;
+					filter: grayscale(100%);
+				}
+			}
+		}
+		input[type="radio"][name="lang"]:hover {
+			+label {
+				text-decoration: underline;
+			}
+		}
+		input[type="radio"][name="lang"]:checked {
+			+label {
+				font-weight: bold;
+				img {
+					filter: grayscale(0);
+				}
+			}
+		}
+	}
+	section.menu.main {
+		ul:lang(en-US) {
+			display: none;
+		}
+	}
+	div {
+		width: -webkit-fill-available;
+		section#contents {
+			width: -webkit-fill-available;
+			iframe {
+				border: none;
+				width: -webkit-fill-available;
+				height: -webkit-fill-available;
+			}
+		}
+	}
+}

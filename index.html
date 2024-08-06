@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="./css/main.css">
+		<link rel="stylesheet" href="./css/iframe.css">
+		<script src="./script/iframe.js"></script>
+		<title>Celestino Analista Desenvolvedor</title>
+	</head>
+	<body>
+		<section class="menu lang">
+			<ul>
+				<li>
+					<input type="radio" id="pt-BR" name="lang" value="pt-BR" onclick="updateContents(this.value);" checked>
+					<label for="pt-BR"><img src="../img/commons.wikimedia.org-Flag_orb_Brazil.svg" alt="Portugu&ecirc;s (Brasil)">pt-BR</label>
+				</li>
+				<li>
+					<input type="radio" id="en-US" name="lang" value="en-US" onclick="updateContents(this.value);">
+					<label for="en-US"><img src="../img/commons.wikimedia.org-Flag_orb_USA.svg" alt="Ingl&ecirc;s (Estados Unidos)">en-US</label>
+				</li>
+			</ul>
+		</section>
+		<div>
+			<section class="menu main">
+				<ul id="menu-pt-BR" lang="pt-BR">
+					<li><input type="button" id="welcome" value="Boas Vindas" class="selected"></li>
+					<li><input type="button" id="articles" value="Artigos" class="disabled"></li>
+					<li><input type="button" id="diary" value="Di&aacute;rio" class="disabled"></li>
+				</ul>
+				<ul id="menu-en-US" lang="en-US">
+					<li><input type="button" id="welcome" value="Welcome" class="selected"></li>
+					<li><input type="button" id="articles" value="Articles" class="disabled"></li>
+					<li><input type="button" id="diary" value="Diary" class="disabled"></li>
+				</ul>
+			</section>
+			<section id="contents">
+				<iframe src="./pt-BR/welcome.html" id="iframe-contents" name="iframe-contents" title="Contents IFrame"></iframe>
+			</section>
+		</div>
+	</body>
+</html>
